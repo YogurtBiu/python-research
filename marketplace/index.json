@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "templates": [
+    {
+      "id": "python-research",
+      "type": "spec",
+      "name": "Python Research",
+      "description": "Python spec for scientific data processing, reproducible analysis pipelines, and small research tools",
+      "path": "marketplace/specs/python-research",
+      "tags": ["python", "research", "data-analysis", "scientific-computing"]
+    }
+  ]
+}
