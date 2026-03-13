@@ -39,7 +39,7 @@ This spec is for projects where Python is used to:
 6. Batch processing is the default for repeatable experiments.
 7. GUI tools are wrappers around reusable core logic, not the logic itself.
 8. Add one regression test for every bug that once changed a scientific result.
-9. All reusable scientific code must be documented with NumPy-style docstrings.
+9. All reusable scientific code must use Chinese comments and Chinese NumPy-style docstrings by default.
 
 ## Recommended Stack
 
