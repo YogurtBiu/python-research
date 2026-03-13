@@ -36,6 +36,28 @@
 - Raise informative errors with scientific context.
 - Mention which file, column, unit, or parameter failed validation.
 
+## Documentation
+
+### Required
+- All public modules, classes, and functions must include NumPy-style docstrings.
+- Docstrings must describe:
+  - purpose
+  - parameters
+  - return values
+  - units where relevant
+  - expected shapes for arrays or tables where relevant
+  - assumptions and limitations
+  - raised exceptions when important
+
+### Preferred
+- Add examples for reusable analysis functions.
+- Explain scientific meaning, not only programming behavior.
+
+### Forbidden
+- Missing docstrings on reusable public functions
+- Comments that only repeat the code literally
+- Undocumented unit assumptions
+
 ## Good Example
 
 ```python
@@ -48,6 +70,41 @@ def normalize_spectrum(
     if np.any(corrected < 0):
         raise ValueError("Baseline correction produced negative intensity values.")
     return corrected / corrected.max()
+
+def normalize_decay(
+    time_ns: np.ndarray,
+    intensity_counts: np.ndarray,
+    baseline_counts: float = 0.0,
+) -> np.ndarray:
+    """
+    Normalize a decay trace after baseline subtraction.
+
+    Parameters
+    ----------
+    time_ns : np.ndarray
+        Time axis in nanoseconds. Must have the same shape as
+        ``intensity_counts``.
+    intensity_counts : np.ndarray
+        Measured decay intensity in detector counts.
+    baseline_counts : float, default=0.0
+        Constant baseline to subtract before normalization.
+
+    Returns
+    -------
+    np.ndarray
+        Baseline-corrected and normalized decay intensity.
+
+    Raises
+    ------
+    ValueError
+        If the input arrays have inconsistent shapes or if the corrected
+        signal has no positive maximum.
+
+    Notes
+    -----
+    This function assumes that a constant baseline model is valid for the
+    input decay trace.
+    """
 ```
 
 ## Bad Example
@@ -56,4 +113,8 @@ def normalize_spectrum(
 def do_it(x, y, z):
     y = y - z
     return y / max(y)
+
+def normalize_decay(t, y, b=0):
+    # normalize data
+    return (y - b) / max(y - b)
 ```
