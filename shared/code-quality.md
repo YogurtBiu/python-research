@@ -48,3 +48,10 @@ def normalize_spectrum(
     if np.any(corrected < 0):
         raise ValueError("Baseline correction produced negative intensity values.")
     return corrected / corrected.max()
+
+## Bad Example
+def do_it(x, y, z):
+    y = y - z
+    return y / max(y)
+
+```md
