@@ -247,4 +247,3 @@ Before merging reusable code, check:
 - Are side effects separated from core logic?
 - Does the docstring describe assumptions and failure modes?
 - Would another researcher understand and reuse this function in six months?
-- 
