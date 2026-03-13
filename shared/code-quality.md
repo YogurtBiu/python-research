@@ -56,5 +56,4 @@ def normalize_spectrum(
 def do_it(x, y, z):
     y = y - z
     return y / max(y)
-
 ```
