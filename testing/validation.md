@@ -41,3 +41,8 @@ def test_ms_to_s_conversion():
     df = pd.DataFrame({"time_ms": [0, 500, 1000]})
     out = convert_time(df)
     assert np.allclose(out["time_s"], [0.0, 0.5, 1.0])
+```
+
+## Bad Example
+
+- Only testing that the script runs without crashing.
