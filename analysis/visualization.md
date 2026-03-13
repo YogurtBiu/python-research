@@ -42,9 +42,9 @@ ax.set_xlabel("Wavelength (nm)")
 ax.set_ylabel("Intensity (counts)")
 ax.set_title(f"Sample {sample_id}")
 fig.savefig(output_path, dpi=300, bbox_inches="tight")
+```
 
-
-## Good Example
+## Bad Example
 
 - No axis labels
 - Manual recoloring in presentation software
