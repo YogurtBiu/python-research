@@ -238,6 +238,22 @@ def normalize_decay(t, y, b=0):
     return (y - b) / max(y - b)
 ```
 
+## Documentation Language
+
+### Required
+- All docstrings, inline comments, and explanatory notes must be written in Chinese by default.
+- Comments must explain scientific meaning, assumptions, units, or non-obvious implementation choices.
+- English may be used only when required by external APIs, library conventions, or publication-facing code.
+
+### Preferred
+- Use concise technical Chinese.
+- Keep variable names in English, but write explanations in Chinese.
+
+### Forbidden
+- Mixing Chinese and English comments without reason
+- Writing comments that only restate the code literally
+- Leaving reusable public functions undocumented
+
 ## Review Checklist
 
 Before merging reusable code, check:
